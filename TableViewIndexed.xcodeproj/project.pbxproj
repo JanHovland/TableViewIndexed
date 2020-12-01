@@ -47,10 +47,11 @@
 		DB51C6882576B44500E121DE = {
 			isa = PBXGroup;
 			children = (
-				DB51C68D2576B44600E121DE /* Shared */,
 				DB51C6972576B44700E121DE /* iOS */,
 				DB51C69E2576B44700E121DE /* macOS */,
+				DB51C6B32576B89100E121DE /* Model */,
 				DB51C6962576B44700E121DE /* Products */,
+				DB51C68D2576B44600E121DE /* Shared */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,13 @@
 				DB51C6A02576B44700E121DE /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		DB51C6B32576B89100E121DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,7 +332,7 @@
 				DEVELOPMENT_TEAM = 6UR9TA6744;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +354,7 @@
 				DEVELOPMENT_TEAM = 6UR9TA6744;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
