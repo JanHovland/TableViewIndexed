@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		DB51C6A12576B44700E121DE /* TableViewIndexedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C68E2576B44600E121DE /* TableViewIndexedApp.swift */; };
 		DB51C6A22576B44700E121DE /* TableViewIndexedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C68E2576B44600E121DE /* TableViewIndexedApp.swift */; };
-		DB51C6A32576B44700E121DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C68F2576B44600E121DE /* ContentView.swift */; };
-		DB51C6A42576B44700E121DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C68F2576B44600E121DE /* ContentView.swift */; };
+		DB51C6A32576B44700E121DE /* TableViewIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C68F2576B44600E121DE /* TableViewIndexed.swift */; };
+		DB51C6A42576B44700E121DE /* TableViewIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C68F2576B44600E121DE /* TableViewIndexed.swift */; };
 		DB51C6A52576B44700E121DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB51C6902576B44700E121DE /* Assets.xcassets */; };
 		DB51C6A62576B44700E121DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB51C6902576B44700E121DE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB51C68E2576B44600E121DE /* TableViewIndexedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewIndexedApp.swift; sourceTree = "<group>"; };
-		DB51C68F2576B44600E121DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DB51C68F2576B44600E121DE /* TableViewIndexed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewIndexed.swift; sourceTree = "<group>"; };
 		DB51C6902576B44700E121DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB51C6952576B44700E121DE /* TableViewIndexed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewIndexed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB51C6982576B44700E121DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				DB51C68E2576B44600E121DE /* TableViewIndexedApp.swift */,
-				DB51C68F2576B44600E121DE /* ContentView.swift */,
+				DB51C68F2576B44600E121DE /* TableViewIndexed.swift */,
 				DB51C6902576B44700E121DE /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -187,7 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB51C6A32576B44700E121DE /* ContentView.swift in Sources */,
+				DB51C6A32576B44700E121DE /* TableViewIndexed.swift in Sources */,
 				DB51C6A12576B44700E121DE /* TableViewIndexedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB51C6A42576B44700E121DE /* ContentView.swift in Sources */,
+				DB51C6A42576B44700E121DE /* TableViewIndexed.swift in Sources */,
 				DB51C6A22576B44700E121DE /* TableViewIndexedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
