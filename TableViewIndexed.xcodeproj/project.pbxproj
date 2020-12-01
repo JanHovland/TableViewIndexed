@@ -13,6 +13,11 @@
 		DB51C6A42576B44700E121DE /* TableViewIndexed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C68F2576B44600E121DE /* TableViewIndexed.swift */; };
 		DB51C6A52576B44700E121DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB51C6902576B44700E121DE /* Assets.xcassets */; };
 		DB51C6A62576B44700E121DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB51C6902576B44700E121DE /* Assets.xcassets */; };
+		DB51C6B72576C1E400E121DE /* UserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C6B62576C1E400E121DE /* UserRecord.swift */; };
+		DB51C6BB2576C1F200E121DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C6BA2576C1F200E121DE /* User.swift */; };
+		DB51C6BF2576C1FD00E121DE /* PostalNummer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C6BE2576C1FD00E121DE /* PostalNummer.swift */; };
+		DB51C6C32576C20300E121DE /* PersonRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C6C22576C20300E121DE /* PersonRecord.swift */; };
+		DB51C6C72576C20900E121DE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C6C62576C20900E121DE /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		DB51C69D2576B44700E121DE /* TableViewIndexed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewIndexed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB51C69F2576B44700E121DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB51C6A02576B44700E121DE /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		DB51C6B62576C1E400E121DE /* UserRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRecord.swift; sourceTree = "<group>"; };
+		DB51C6BA2576C1F200E121DE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DB51C6BE2576C1FD00E121DE /* PostalNummer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalNummer.swift; sourceTree = "<group>"; };
+		DB51C6C22576C20300E121DE /* PersonRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonRecord.swift; sourceTree = "<group>"; };
+		DB51C6C62576C20900E121DE /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,11 @@
 		DB51C6B32576B89100E121DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DB51C6BE2576C1FD00E121DE /* PostalNummer.swift */,
+				DB51C6C62576C20900E121DE /* Person.swift */,
+				DB51C6C22576C20300E121DE /* PersonRecord.swift */,
+				DB51C6BA2576C1F200E121DE /* User.swift */,
+				DB51C6B62576C1E400E121DE /* UserRecord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,8 +210,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB51C6BB2576C1F200E121DE /* User.swift in Sources */,
+				DB51C6C32576C20300E121DE /* PersonRecord.swift in Sources */,
 				DB51C6A32576B44700E121DE /* TableViewIndexed.swift in Sources */,
+				DB51C6B72576C1E400E121DE /* UserRecord.swift in Sources */,
+				DB51C6C72576C20900E121DE /* Person.swift in Sources */,
 				DB51C6A12576B44700E121DE /* TableViewIndexedApp.swift in Sources */,
+				DB51C6BF2576C1FD00E121DE /* PostalNummer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
