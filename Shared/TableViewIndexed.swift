@@ -2,24 +2,18 @@
 import SwiftUI
 
 let database: [String: [String]] = [
-  "iPhone": [
-    "iPhone", "iPhone 3G", "iPhone 3GS", "iPhone 4", "iPhone 4S", "iPhone 5", "iPhone 5C", "iPhone 5S", "iPhone 6", "iPhone 6 Plus", "iPhone 6S", "iPhone 6S Plus", "iPhone SE", "iPhone 7", "iPhone 7 Plus", "iPhone 8", "iPhone 8 Plus", "iPhone X", "iPhone Xs", "iPhone Xs Max", "iPhone Xʀ", "iPhone 11", "iPhone 11 Pro", "iPhone 11 Pro Max", "iPhone SE 2"
-  ],
-  "iPad": [
-    "iPad", "iPad 2", "iPad 3", "iPad 4", "iPad 5", "iPad 6", "iPad 7", "iPad Air", "iPad Air 2", "iPad Air 3", "iPad Mini", "iPad Mini 2", "iPad Mini 3", "iPad Mini 4", "iPad Mini 5", "iPad Pro 9.7-inch", "iPad Pro 10.5-inch", "iPad Pro 11-inch", "iPad Pro 11-inch 2", "iPad Pro 12.9-inch", "iPad Pro 12.9-inch 2", "iPad Pro 12.9-inch 3", "iPad Pro 12.9-inch 4"
-  ],
-  "iPod": [
-    "iPod Touch", "iPod Touch 2", "iPod Touch 3", "iPod Touch 4", "iPod Touch 5", "iPod Touch 6"
-  ],
-  "Apple TV": [
-    "Apple TV 2", "Apple TV 3", "Apple TV 4", "Apple TV 4K"
-  ],
-  "Apple Watch": [
-    "Apple Watch", "Apple Watch Series 1", "Apple Watch Series 2", "Apple Watch Series 3", "Apple Watch Series 4", "Apple Watch Series 5"
-  ],
-  "HomePod": [
-    "HomePod"
-  ]
+    "A": ["Anna", "Alfred"
+    ],
+    "B": ["Beate", "Bente"
+    ],
+    "C": ["Christine", "Charlotte"
+    ],
+    "D": ["Dante", "Dagfinn"
+    ],
+    "E": ["Erik", "Einar"
+    ],
+    "F": ["Fredrik", "Frantz"
+    ]
 ]
 
 struct HeaderView: View {
@@ -88,7 +82,7 @@ struct SectionIndexTitles: View {
   var body: some View {
     VStack {
       ForEach(titles, id: \.self) { title in
-        SectionIndexTitle(image: sfSymbol(for: title))
+        SectionIndexTitle(text: sfSymbol(text: title))
           .background(dragObserver(title: title))
       }
     }
@@ -109,37 +103,38 @@ struct SectionIndexTitles: View {
   func dragObserver(geometry: GeometryProxy, title: String) -> some View {
     if geometry.frame(in: .global).contains(dragLocation) {
       DispatchQueue.main.async {
-        proxy.scrollTo(title, anchor: .top) /// .top går til toppen av skjermen
+        proxy.scrollTo(title, anchor: .top)
       }
     }
     return Rectangle().fill(Color.clear)
   }
 
-  func sfSymbol(for deviceCategory: String) -> Image {
-    let systemName: String
-    switch deviceCategory {
-    case "iPhone": systemName = "iphone"
-    case "iPad": systemName = "ipad"
-    case "iPod": systemName = "ipod"
-    case "Apple TV": systemName = "appletv"
-    case "Apple Watch": systemName = "applewatch"
-    case "HomePod": systemName = "homepod"
-    default: systemName = "xmark"
-    }
-    return Image(systemName: systemName)
+  func sfSymbol(text: String) -> String {
+//    let systemName: String
+//    switch deviceCategory {
+//    case "iPhone": systemName = "iphone"
+//    case "iPad": systemName = "ipad"
+//    case "iPod": systemName = "ipod"
+//    case "Apple TV": systemName = "appletv"
+//    case "Apple Watch": systemName = "applewatch"
+//    case "HomePod": systemName = "homepod"
+//    default: systemName = "xmark"
+//    }
+//    return Image(systemName: systemName)
+    return text
   }
 }
 
 struct SectionIndexTitle: View {
-  let image: Image
+  let text: String
 
   var body: some View {
     RoundedRectangle(cornerRadius: 8, style: .continuous)
       .foregroundColor(Color.gray.opacity(0.1))
-      .frame(width: 40, height: 40)
+      .frame(width: 30, height: 10)
       .overlay(
-        image
-          .foregroundColor(.blue)
+        Text(text)
+            .foregroundColor(.accentColor)
       )
   }
 }
