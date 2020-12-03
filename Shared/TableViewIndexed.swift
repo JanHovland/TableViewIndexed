@@ -22,7 +22,8 @@ struct RowView: View {
 }
 
 struct TableViewIndexed: View {
-    var persons = [Person]()
+    var persons = [Person]() 
+
     var alphabet = [String]()
         
     var body: some View {
@@ -53,7 +54,6 @@ struct TableViewIndexed: View {
                             .font(Font.system(.body).bold())
                         Text(person.lastName)
                     }
-                    /// Dette medfører at navigationBarTitle viser korrekt ved oppstart. Er dette en feil?
                     .foregroundColor(.primary)
                 }
             }
@@ -73,8 +73,8 @@ struct TableViewIndexed: View {
     
     init() {
         /// persons må også være sortert
-        /// Det kan foreløpig ikke være flere personer under f.eks "A"
         persons.append(Person(firstName: "Anna", lastName: "Andersen"))
+        persons.append(Person(firstName: "Alfred", lastName: "Gunnerud"))
         persons.append(Person(firstName: "Bente", lastName: "Kristiansen"))
         persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
         persons.append(Person(firstName: "Fred", lastName: "Knutsen"))
