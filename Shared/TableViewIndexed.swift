@@ -1,26 +1,8 @@
 // Original article here: https://www.fivestars.blog/code/section-title-index-swiftui.html
 import SwiftUI
 
-
-let database: [String: [String]] = [
-    "A": ["Anna", "Alfred"
-    ],
-    "B": ["Beate", "Bente"
-    ],
-    "C": ["Christine", "Charlotte"
-    ],
-    "D": ["Dante", "Dagfinn"
-    ],
-    "E": ["Erik", "Einar"
-    ],
-    "F": ["Fredrik", "Frantz"
-    ]
-]
-
-
 struct HeaderView: View {
-    let title: String
-    
+    var title: String
     var body: some View {
         Text(title)
             .font(.title)
@@ -31,8 +13,7 @@ struct HeaderView: View {
 }
 
 struct RowView: View {
-    let text: String
-    
+    var text: String
     var body: some View {
         Text(text)
             .padding()
@@ -41,11 +22,10 @@ struct RowView: View {
 }
 
 struct TableViewIndexed: View {
-    //  let devices: [String: [String]] = database
-    
     var persons = [Person]()
-    var alphabet = ["B","A"].sorted()
-    
+    var alphabet = [String]()
+   
+        
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView {
@@ -59,22 +39,6 @@ struct TableViewIndexed: View {
     }
     
     var devicesList: some View {
-        
-        //    ForEach(alphabet, id: \.self) { letter in
-        //        Section(header: Text(letter) {
-        //            ForEach(persons) { person in
-        //                person.firstName.prefix(1) == letter
-        //            }) { person in
-        //                HStack {
-        //                    Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
-        //                    Text(person.firstName)
-        //                    Text(person.lastName)
-        //                }
-        //            }
-        //        }
-        //    }
-        
-        
         ForEach(alphabet, id: \.self) { letter in
             Section(header: Text(letter).id(letter)) {
                 ForEach(persons.filter({ (person) -> Bool in
@@ -88,27 +52,6 @@ struct TableViewIndexed: View {
                 }
             }
         }
-        
-        
-        
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        //      lhs.indexLetter < rhs.indexLetter
-        //    }), id: \.indexLetter) { _ in
-        //      Section(
-        //        header: HeaderView(title: alphabet.sorted())
-        //      ) {
-        //        ForEach(persons) { name in
-        //            RowView(text: name)
-        //        }
-        //      }
-        //    }
-        
     }
     
     func sectionIndexTitles(proxy: ScrollViewProxy) -> some View {
@@ -118,8 +61,16 @@ struct TableViewIndexed: View {
     }
     
     init() {
+        persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
         persons.append(Person(firstName: "Anna", lastName: "Andersen"))
         persons.append(Person(firstName: "Bente", lastName: "Kristiansen"))
+        
+        /// Må oppdatere alphabet
+        
+        alphabet.append("B")
+        alphabet.append("D")
+        alphabet.append("A")
+        alphabet.sort()
     }
     
 }
@@ -132,7 +83,7 @@ struct SectionIndexTitles: View {
     var body: some View {
         VStack {
             ForEach(titles, id: \.self) { title in
-                SectionIndexTitle(text: sfSymbol(text: title))
+                SectionIndexTitle(text: title)
                     .background(dragObserver(title: title))
             }
         }
@@ -158,26 +109,12 @@ struct SectionIndexTitles: View {
         }
         return Rectangle().fill(Color.clear)
     }
+
     
-    func sfSymbol(text: String) -> String {
-        //    let systemName: String
-        //    switch deviceCategory {
-        //    case "iPhone": systemName = "iphone"
-        //    case "iPad": systemName = "ipad"
-        //    case "iPod": systemName = "ipod"
-        //    case "Apple TV": systemName = "appletv"
-        //    case "Apple Watch": systemName = "applewatch"
-        //    case "HomePod": systemName = "homepod"
-        //    default: systemName = "xmark"
-        //    }
-        //    return Image(systemName: systemName)
-        return text
-    }
 }
 
 struct SectionIndexTitle: View {
-    let text: String
-    
+    var text: String
     var body: some View {
         RoundedRectangle(cornerRadius: 8, style: .continuous)
             .foregroundColor(Color.gray.opacity(0.1))
