@@ -9,11 +9,6 @@ import SwiftUI
 import CloudKit
 
 struct Person: Identifiable {
-    
-    static func > (lhs: Person, rhs: Person) -> Bool {
-        return (lhs.firstName, lhs.lastName) > (rhs.firstName, rhs.lastName)
-    }
-
     var id = UUID()
     var recordID: CKRecord.ID?
     var firstName: String = ""

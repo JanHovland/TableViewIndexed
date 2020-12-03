@@ -64,7 +64,7 @@ struct TableViewIndexed: View {
         persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
         persons.append(Person(firstName: "Anna", lastName: "Andersen"))
         persons.append(Person(firstName: "Bente", lastName: "Kristiansen"))
-        
+         
         /// Må oppdatere alphabet
         
         alphabet.append("B")
