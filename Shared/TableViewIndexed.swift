@@ -1,6 +1,7 @@
 // Original article here: https://www.fivestars.blog/code/section-title-index-swiftui.html
 import SwiftUI
 
+
 let database: [String: [String]] = [
     "A": ["Anna", "Alfred"
     ],
