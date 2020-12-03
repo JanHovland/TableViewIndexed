@@ -18,6 +18,7 @@
 		DB51C6BF2576C1FD00E121DE /* PostalNummer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C6BE2576C1FD00E121DE /* PostalNummer.swift */; };
 		DB51C6C32576C20300E121DE /* PersonRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C6C22576C20300E121DE /* PersonRecord.swift */; };
 		DB51C6C72576C20900E121DE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB51C6C62576C20900E121DE /* Person.swift */; };
+		DBCA23BD2578EED8007B1EC4 /* PersonIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCA23BC2578EED8007B1EC4 /* PersonIndex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DB51C6BE2576C1FD00E121DE /* PostalNummer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalNummer.swift; sourceTree = "<group>"; };
 		DB51C6C22576C20300E121DE /* PersonRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonRecord.swift; sourceTree = "<group>"; };
 		DB51C6C62576C20900E121DE /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DBCA23BC2578EED8007B1EC4 /* PersonIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonIndex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				DB51C6BE2576C1FD00E121DE /* PostalNummer.swift */,
 				DB51C6C62576C20900E121DE /* Person.swift */,
+				DBCA23BC2578EED8007B1EC4 /* PersonIndex.swift */,
 				DB51C6C22576C20300E121DE /* PersonRecord.swift */,
 				DB51C6BA2576C1F200E121DE /* User.swift */,
 				DB51C6B62576C1E400E121DE /* UserRecord.swift */,
@@ -213,6 +216,7 @@
 				DB51C6BB2576C1F200E121DE /* User.swift in Sources */,
 				DB51C6C32576C20300E121DE /* PersonRecord.swift in Sources */,
 				DB51C6A32576B44700E121DE /* TableViewIndexed.swift in Sources */,
+				DBCA23BD2578EED8007B1EC4 /* PersonIndex.swift in Sources */,
 				DB51C6B72576C1E400E121DE /* UserRecord.swift in Sources */,
 				DB51C6C72576C20900E121DE /* Person.swift in Sources */,
 				DB51C6A12576B44700E121DE /* TableViewIndexedApp.swift in Sources */,
