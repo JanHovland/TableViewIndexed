@@ -24,7 +24,6 @@ struct RowView: View {
 struct TableViewIndexed: View {
     var persons = [Person]()
     var alphabet = [String]()
-   
         
     var body: some View {
         NavigationView {
@@ -49,14 +48,20 @@ struct TableViewIndexed: View {
                 })) { person in
                     HStack {
                         Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
+                            .foregroundColor(.green)
                         Text(person.firstName)
+                            .font(Font.system(.body).bold())
                         Text(person.lastName)
                     }
                     /// Dette medfører at navigationBarTitle viser korrekt ved oppstart. Er dette en feil?
                     .foregroundColor(.primary)
                 }
             }
-            foregroundColor(.primary)
+            .foregroundColor(.primary)
+            .font(Font.system(.body).bold())
+            .padding(.top,2)
+            .padding(.leading,5)
+            .padding(.bottom,2)
         }
     }
     
@@ -68,18 +73,20 @@ struct TableViewIndexed: View {
     
     init() {
         /// persons må også være sortert
+        /// Det kan foreløpig ikke være flere personer under f.eks "A"
         persons.append(Person(firstName: "Anna", lastName: "Andersen"))
-        persons.append(Person(firstName: "Alfred", lastName: "Knutsen"))
         persons.append(Person(firstName: "Bente", lastName: "Kristiansen"))
         persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
+        persons.append(Person(firstName: "Fred", lastName: "Knutsen"))
 
         /// Må oppdatere alphabet
         
         alphabet.append("A")
         alphabet.append("B")
         alphabet.append("D")
+        alphabet.append("F")
         /// sort() virker ikke, så alphabet må sorteres på annen måte
-        alphabet.sort()
+        /// alphabet.sort()
     }
     
 }
@@ -118,7 +125,6 @@ struct SectionIndexTitles: View {
         }
         return Rectangle().fill(Color.clear)
     }
-
     
 }
 
@@ -126,7 +132,7 @@ struct SectionIndexTitle: View {
     var text: String
     var body: some View {
         RoundedRectangle(cornerRadius: 8, style: .continuous)
-            .foregroundColor(Color.gray.opacity(0.1))
+            .foregroundColor(Color.gray.opacity(0.01))
             .frame(width: 30, height: 10)
             .overlay(
                 Text(text)
