@@ -27,20 +27,23 @@ struct TableViewIndexed: View {
    
         
     var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView {
-                LazyVStack {
-                    devicesList
+        NavigationView {
+            ScrollViewReader { proxy in
+                ScrollView {
+                    LazyVStack (alignment: .leading) {
+                        devicesList
+                    }
+                    .navigationBarTitle("Persons Overview")
                 }
+                .overlay(sectionIndexTitles(proxy: proxy))
             }
-            .overlay(sectionIndexTitles(proxy: proxy))
         }
-        .navigationBarTitle("Apple Devices")
     }
     
     var devicesList: some View {
         ForEach(alphabet, id: \.self) { letter in
             Section(header: Text(letter).id(letter)) {
+                /// Her er kopligen mellom letter pg person
                 ForEach(persons.filter({ (person) -> Bool in
                     person.firstName.prefix(1) == letter
                 })) { person in
@@ -49,8 +52,11 @@ struct TableViewIndexed: View {
                         Text(person.firstName)
                         Text(person.lastName)
                     }
+                    /// Dette medfører at navigationBarTitle viser korrekt ved oppstart. Er dette en feil?
+                    .foregroundColor(.primary)
                 }
             }
+            foregroundColor(.primary)
         }
     }
     
@@ -61,15 +67,18 @@ struct TableViewIndexed: View {
     }
     
     init() {
-        persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
+        /// persons må også være sortert
         persons.append(Person(firstName: "Anna", lastName: "Andersen"))
+        persons.append(Person(firstName: "Alfred", lastName: "Knutsen"))
         persons.append(Person(firstName: "Bente", lastName: "Kristiansen"))
-         
+        persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
+
         /// Må oppdatere alphabet
         
+        alphabet.append("A")
         alphabet.append("B")
         alphabet.append("D")
-        alphabet.append("A")
+        /// sort() virker ikke, så alphabet må sorteres på annen måte
         alphabet.sort()
     }
     
