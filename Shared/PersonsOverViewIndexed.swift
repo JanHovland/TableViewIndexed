@@ -1,4 +1,12 @@
+//
+//  PersonsOverViewIndexed.swift
+//  Shared
+//
+//  Created by Jan Hovland on 01/12/2020.
+//
+
 // Original article here: https://www.fivestars.blog/code/section-title-index-swiftui.html
+
 import SwiftUI
 
 struct HeaderView: View {
@@ -36,7 +44,28 @@ struct PersonsOverViewIndexed: View {
             ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack (alignment: .leading) {
-                        devicesList
+                        ForEach(alphabet, id: \.self) { letter in
+                            Section(header: Text(letter).id(letter)) {
+                                /// Her er kopligen mellom letter pg person
+                                ForEach(persons.filter({ (person) -> Bool in
+                                    person.firstName.prefix(1) == letter
+                                })) { person in
+                                    HStack {
+                                        Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
+                                            .foregroundColor(.green)
+                                        Text(person.firstName)
+                                            .font(Font.system(.body).bold())
+                                        Text(person.lastName)
+                                    }
+                                    .foregroundColor(.primary)
+                                }
+                            }
+                            .foregroundColor(.primary)
+                            .font(Font.system(.body).bold())
+                            .padding(.top,2)
+                            .padding(.leading,5)
+                            .padding(.bottom,2)
+                        }
                     }
                     .navigationBarTitle("Persons Overview")
                 }
@@ -45,54 +74,11 @@ struct PersonsOverViewIndexed: View {
         }
     }
     
-    var devicesList: some View {
-        ForEach(alphabet, id: \.self) { letter in
-            Section(header: Text(letter).id(letter)) {
-                /// Her er kopligen mellom letter pg person
-                ForEach(persons.filter({ (person) -> Bool in
-                    person.firstName.prefix(1) == letter
-                })) { person in
-                    HStack {
-                        Image(systemName: "person.circle.fill").font(.largeTitle).padding(.trailing, 5)
-                            .foregroundColor(.green)
-                        Text(person.firstName)
-                            .font(Font.system(.body).bold())
-                        Text(person.lastName)
-                    }
-                    .foregroundColor(.primary)
-                }
-            }
-            .foregroundColor(.primary)
-            .font(Font.system(.body).bold())
-            .padding(.top,2)
-            .padding(.leading,5)
-            .padding(.bottom,2)
-        }
-    }
-    
     func sectionIndexTitles(proxy: ScrollViewProxy) -> some View {
         SectionIndexTitles(proxy: proxy, titles: alphabet.sorted())
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding()
     }
-    
-//    init() {
-//        /// persons må også være sortert
-//        persons.append(Person(firstName: "Anna", lastName: "Andersen"))
-//        persons.append(Person(firstName: "Alfred", lastName: "Gunnerud"))
-//        persons.append(Person(firstName: "Bente", lastName: "Kristiansen"))
-//        persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
-//        persons.append(Person(firstName: "Fred", lastName: "Knutsen"))
-//
-//        /// Må oppdatere alphabet
-//
-//        alphabet.append("A")
-//        alphabet.append("B")
-//        alphabet.append("D")
-//        alphabet.append("F")
-//        /// sort() virker ikke, så alphabet må sorteres på annen måte
-//        /// alphabet.sort()
-//    }
     
 }
 
