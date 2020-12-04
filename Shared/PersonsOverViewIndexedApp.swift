@@ -11,7 +11,7 @@ import SwiftUI
 struct TableViewIndexedApp: App {
     var body: some Scene {
         WindowGroup {
-            TableViewIndexed()
+            PersonsOverViewIndexed()
         }
     }
 }

@@ -21,10 +21,15 @@ struct RowView: View {
     }
 }
 
-struct TableViewIndexed: View {
-    var persons = [Person]() 
-
-    var alphabet = [String]()
+struct PersonsOverViewIndexed: View {
+    var persons: [Person] = [Person(firstName: "Anna", lastName: "Andersen"),
+                             Person(firstName: "Alfred", lastName: "Gunnerud"),
+                             Person(firstName: "Bente", lastName: "Kristiansen"),
+                             Person(firstName: "Dolly", lastName: "Olsen"),
+                             Person(firstName: "Fred", lastName: "Knutsen")
+    ]
+    
+    var alphabet = ["A","B","D","F"]
         
     var body: some View {
         NavigationView {
@@ -71,23 +76,23 @@ struct TableViewIndexed: View {
             .padding()
     }
     
-    init() {
-        /// persons må også være sortert
-        persons.append(Person(firstName: "Anna", lastName: "Andersen"))
-        persons.append(Person(firstName: "Alfred", lastName: "Gunnerud"))
-        persons.append(Person(firstName: "Bente", lastName: "Kristiansen"))
-        persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
-        persons.append(Person(firstName: "Fred", lastName: "Knutsen"))
-
-        /// Må oppdatere alphabet
-        
-        alphabet.append("A")
-        alphabet.append("B")
-        alphabet.append("D")
-        alphabet.append("F")
-        /// sort() virker ikke, så alphabet må sorteres på annen måte
-        /// alphabet.sort()
-    }
+//    init() {
+//        /// persons må også være sortert
+//        persons.append(Person(firstName: "Anna", lastName: "Andersen"))
+//        persons.append(Person(firstName: "Alfred", lastName: "Gunnerud"))
+//        persons.append(Person(firstName: "Bente", lastName: "Kristiansen"))
+//        persons.append(Person(firstName: "Dolly", lastName: "Olsen"))
+//        persons.append(Person(firstName: "Fred", lastName: "Knutsen"))
+//
+//        /// Må oppdatere alphabet
+//
+//        alphabet.append("A")
+//        alphabet.append("B")
+//        alphabet.append("D")
+//        alphabet.append("F")
+//        /// sort() virker ikke, så alphabet må sorteres på annen måte
+//        /// alphabet.sort()
+//    }
     
 }
 
@@ -141,10 +146,3 @@ struct SectionIndexTitle: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            TableViewIndexed()
-        }
-    }
-}
